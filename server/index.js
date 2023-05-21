@@ -12,9 +12,9 @@ app.post("/gift", (req, res) => {
     const isInTheList = verifyProof(body.proof, body.leaf, MERKLE_ROOT);
 
     if (isInTheList) {
-        res.send("You got a toy robot!");
+        res.send(`You got a toy robot! - ${body.leaf}`);
     } else {
-        res.send("You are not on the list :(");
+        res.send(`You are not on the list :( - ${body.leaf}`);
     }
 });
 
